@@ -1,12 +1,15 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = process.env.APP_URL || 'https://automation-machines.com';
+  
   return [
     {
-      url: 'https://automation-machines.com',
+      url: baseUrl,
       lastModified: new Date(),
-      changeFrequency: 'yearly',
+      changeFrequency: 'monthly',
       priority: 1,
     },
-  ]
+    // Add more routes as needed
+  ];
 }

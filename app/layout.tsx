@@ -51,6 +51,22 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  alternates: {
+    canonical: '/',
+  },
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Automation Machines',
+  url: 'https://automation-machines.com',
+  description: 'Futuristic landing page for Automation Machines. High-end web solutions built with React, Node, and SQL.',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: 'https://automation-machines.com/search?q={search_term_string}',
+    'query-input': 'required name=search_term_string',
+  },
 };
 
 import CustomCursor from '@/components/CustomCursor';
@@ -58,6 +74,12 @@ import CustomCursor from '@/components/CustomCursor';
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body suppressHydrationWarning>
         <CustomCursor />
         {children}
