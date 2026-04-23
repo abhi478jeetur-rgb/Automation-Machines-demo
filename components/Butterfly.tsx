@@ -45,9 +45,32 @@ const ButterflyModel = () => {
 };
 
 const Butterfly = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      // Disable on mobile/tablet to prevent GPU crashes due to multiple 3D canvases
+      setIsMobile(window.innerWidth < 1024);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Return null on mobile to save memory and prevent crashes
+  if (isMobile) return null;
+
   return (
     <div className="fixed inset-0 pointer-events-none z-[9998] opacity-80">
-      <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
+      <Canvas 
+        camera={{ position: [0, 0, 5], fov: 50 }}
+        dpr={[1, 1.5]} // Optimize pixel ratio for performance
+        gl={{ 
+          powerPreference: "high-performance",
+          antialias: false, // Turn off antialiasing for better performance
+          alpha: true 
+        }}
+      >
         <ambientLight intensity={1.5} />
         <pointLight position={[10, 10, 10]} intensity={1} />
         <spotLight position={[-10, 10, 10]} angle={0.15} penumbra={1} intensity={1} />
