@@ -82,7 +82,7 @@ const jsonLd = {
   },
 };
 
-import CustomCursor from '@/components/CustomCursor';
+import Butterfly from '@/components/Butterfly';
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
@@ -94,7 +94,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         />
       </head>
       <body suppressHydrationWarning>
-        <CustomCursor />
+        <Butterfly />
         {children}
       </body>
     </html>

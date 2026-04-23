@@ -15,11 +15,8 @@
 
 @layer base {
   body {
-    @apply bg-black text-white antialiased cursor-none;
+    @apply bg-black text-white antialiased;
     font-family: var(--font-sans);
-  }
-  a, button, [role="button"], input, textarea, select {
-    cursor: none !important;
   }
 }
 
