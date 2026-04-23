@@ -18,27 +18,36 @@ export const metadata: Metadata = {
   keywords: ['Automation', 'Machines', 'Web Development', 'React', 'Next.js', 'Futuristic', 'High-end'],
   authors: [{ name: 'Automation Machines Team' }],
   creator: 'Automation Machines',
+  icons: {
+    icon: [
+      { url: '/logo.png' },
+      { url: '/logo.png', sizes: '32x32', type: 'image/png' },
+    ],
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://automation-machines.com',
-    title: 'Automation Machines | Futuristic Web Solutions',
-    description: 'We build pixel-perfect, high-end web experiences.',
+    title: 'Automation Machines | High-End Automation Solutions',
+    description: 'We engineer futuristic, pixel-perfect web experiences for the next generation of digital pioneers.',
     siteName: 'Automation Machines',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Automation Machines',
+        alt: 'Automation Machines Futuristic Interface',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Automation Machines | Futuristic Web Solutions',
-    description: 'We build pixel-perfect, high-end web experiences.',
+    title: 'Automation Machines | High-End Automation Solutions',
+    description: 'Engineering futuristic web experiences with precision and scale.',
     images: ['/og-image.png'],
+    creator: '@automation_machines',
   },
   robots: {
     index: true,
@@ -54,6 +63,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
+  manifest: '/manifest.json',
   verification: {
     google: 'Aaxz4xTPWoFt24o2r_M9wsh6B60M0bCZUXbhAuxlbgU',
   },
