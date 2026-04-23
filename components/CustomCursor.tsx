@@ -41,11 +41,6 @@ const CustomCursor = () => {
 
   return (
     <>
-      <style jsx global>{`
-        body, a, button, [role="button"] {
-          cursor: none !important;
-        }
-      `}</style>
       <div className="fixed inset-0 pointer-events-none z-[9999] overflow-hidden">
         <motion.div
           className="fixed top-0 left-0 w-10 h-10 rounded-full border border-brand-orange/50 pointer-events-none"
